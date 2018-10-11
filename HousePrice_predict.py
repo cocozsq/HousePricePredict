@@ -64,12 +64,12 @@ imputer_train_X = my_imputer.fit_transform(train_X)
 imputer_test_X = my_imputer.fit_transform(test_X)
 
 other_params = {
-    'learning_rate':0.05, # 最佳模型参数得分0.8816
-    'n_estimators':350,
-    'max_depth':4,
-    'min_child_weight':3,
+    'learning_rate':0.07, # 最佳模型参数得分0.8816
+    'n_estimators':500,
+    'max_depth':5,
+    'min_child_weight':1,
     'seed':0,
-    'subsample':0.6,
+    'subsample':0.55,
     'colsample_bytree':0.7,
     'gamma':0.1,
     'reg_alpha':1,
@@ -84,4 +84,4 @@ predict_price = np.expm1(predict_price)
 
 my_submit = pd.DataFrame({'Id':test_data.Id, 'SalePrice':predict_price})
 
-my_submit.to_csv( 'submission7.csv', index=False )  
+my_submit.to_csv( 'submission8.csv', index=False )  
